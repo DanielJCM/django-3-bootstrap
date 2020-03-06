@@ -1,13 +1,30 @@
 {% extends "app/base.html" %}
 {% block title %}List{% endblock %}
 {% block body %}
+<a href="{% url 'create' %}"><button class="btn btn-success">New</button></a>
 <h1>List of Persons</h1>
-<ul>
-  {% for person in object_list %}
-  <li>{{ person.first_name }} {{ person.last_name }}
-    <a href="{% url 'update' person.id %}">Update</a>
-    <a href="{% url 'delete' person.id %}">Delete</a>
-  </li>
-  {% endfor %}
-</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Last name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for person in object_list %}
+        <tr>
+            <td>{{ person.id }}</td>
+            <td>{{ person.first_name }}</td>
+            <td>{{ person.last_name }}</td>
+            <td>
+                <a href="{% url 'update' person.id %}" title="Update"><i class="fa fa-edit fa-lg ollapsed"></i></a>
+                |
+                <a href="{% url 'delete' person.id %}" title="Delete"><i class="fa fa-trash fa-lg ollapsed"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
