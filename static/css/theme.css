@@ -1,8 +1,14 @@
 .text-green{
     color: green !important;
 }
+.text-red{
+    color: red !important;
+}
 .btn-default{
-    background-color: #FFF;
+    border-color: lightgrey;
+}
+.btn-default:hover{
+    background: lightgrey;
 }
 .fa-edit{
     color:#000;

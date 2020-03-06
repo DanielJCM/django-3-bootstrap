@@ -3,7 +3,7 @@
 {% block body %}
 <h1>Delete Person</h1>
 <form method="post">{% csrf_token %}
-  Are you sure you want to delete "{{ object }}" ?
-  <input type="submit" value="Submit" />
+  Are you sure you want to delete "{{ object }}"?
+  <input class="btn btn-default text-red" type="submit" value="Delete" />
 </form>
 {% endblock %}
