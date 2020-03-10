@@ -36,6 +36,7 @@ class Update(UpdateView):
     """
     model = Person
     form_class = PersonForm
+    template_name = "app/person_update.html"
     #fields = ['first_name', 'last_name']
     success_url = reverse_lazy('list')
 
